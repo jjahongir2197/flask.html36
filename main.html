@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library System</title>
+</head>
+<body>
+
+    <h1>Library</h1>
+
+    <form method="POST">
+
+        <input type="text"
+        name="title"
+        placeholder="Book title">
+
+        <br><br>
+
+        <input type="text"
+        name="author"
+        placeholder="Author">
+
+        <br><br>
+
+        <button type="submit">
+            Add Book
+        </button>
+
+    </form>
+
+    <hr>
+
+    {% for book in books %}
+
+        <h2>{{ book.title }}</h2>
+
+        <p>{{ book.author }}</p>
+
+        <a href="/delete/{{ loop.index0 }}">
+            Delete
+        </a>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
